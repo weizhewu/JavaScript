@@ -30,7 +30,8 @@
         function person(name, age) {
             this.name = name
             this.age = age
-            this.yearOfBirth = bornYear // 关联 bornYear 函数
+            // 关联bornYear函数
+            this.yearOfBirth = bornYear 
         }
         function bornYear() {
             return new Date().getFullYear() - this.age
