@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明了变量x，并将其输出到浏览器
+        var x = '你好 JavaScript';
+        document.write(x+'</br>');
+
+        /*
+        定义几种不同类型的变量
+        */
+        var hallo = 'hello world';
+        //JavaScript只有一种数字类型，数字可带可不带小数点
+        var age = 21;
+        var live = true;
+        //null 指空值或指曾赋过值，但是目前没有值
+        var girlfriend = null;
+        //undefined 指没有值或指从未赋值
+        var favsong = undefined;
+        var Car = {
+            'name': '奔驰',
+            'status': '漏油'
+        };
+
+        //极大或极小的数字可以通过科学（指数）计数法来书写
+        var y = 123e5;//12300000
+        var z = 123e-5;//0.00123
+
+        //字符串可以死引号中的任意文本，可使用单引号或双引号
+        //使用单引号括起来的字符串中，如果要包含单引号须使用反斜杠（\）转义处理字符串中的单引号。
+        //使用双引号括起来的字符串中，如果要包含双引号须使用反斜杠（\）转义处理字符串中的双引号。
+        document.write('-----------字符串区域1----------'+'</br>')
+        var sayHello = 'Hello! \'我是一名JavaScript程序员.\' ';
+        document.write(sayHello+'</br>');
+
+        //变量在未持有值的时候为 undefined。此时 typeof 返回 “undefined”：
+        var a;
+        typeof a; // "undefined"
+        document.write(a+'</br>');
+        var b = 42;
+        typeof b; // "number
+        document.write(b+'</br>');
+        b = a;
+        typeof b; // "undefined"
+        document.write(b+'</br>');
+
+        /*
+        JavaScript中，等号 = 称为“赋值”运算符，而不是“等于”运算符。
+        例如，x = y 表示将 y 的值赋给 x。
+        */
+        document.write('----------赋值运算符区域----------'+'</br>')
+        var x = 3;
+        var y = 4;
+        x = y;
+        document.write(x+'</br>');
+
+        //我们可以用 typeof 运算符来查看值得类型，它返回的是类型的字符串值。
+        typeof undefined === "undefined"
+        typeof true === "boolean" 
+        typeof 42 === "number"
+        typeof "42" === "string" 
+        typeof {lift: 42} === "object" 
+        // ES6中新加入的Symbol类型
+        typeof Symbol() === "symbol" 
+        //注意到null类型不在此列。它比较特殊,typeof对它的处理有问题：
+        typeof null === "object"
+
+        //四则运算
+        //加法
+        document.write('-----------四则运算区域----------'+'</br>')
+        var x = 12 + 3;
+        document.write(x+'</br>');
+        //减法
+        var x = 10;
+        var y = x + 7 + 20 + 45 + 6548;
+        document.write(y+'</br>');
+        //乘法
+        var x = 10 * 9;
+        document.write(x+'</br>');
+        //除法
+        var x = 100 / 5;
+        document.write(x+'</br>');
+
+        /*
+        逻辑语句中使用比较运算符来确定变量或值之间的相等或差异。返回true或false
+        等于（==）运算符检查操作数的值是否相等。
+        */
+        document.write('-----------比较运算符区域----------'+'</br>')
+        var num = 10;
+        document.write(num == 8+'</br>');
+    
+
+        //三元运算符
+        //variable为true是，返回value1，反之，返回value2
+        var variable = (condition) ? value1: value2
+        var isAdult = (age < 18) ? "未成年人": "成年人";
+
+        //+=赋值运算符
+        document.write('-----------+=赋值运算符区域----------'+'</br>')
+        var a = 5;
+        var b = 6;
+        var c = 'hello ';
+        var d = 'Nier';
+        a += b; 
+        c += d; 
+        document.write(a+'</br>');
+        document.write(c+'</br>');
+
+        document.write('-----------字符串区域2----------'+'</br>')
+        /*
+        字符串可以存储一系列字符，如 "Tony Wang"。
+        字符串可以是插入到引号中的任何字符。你可以使用单引号或双引号：
+        */
+        var coursename1 = "JavaScript 微课";
+        var coursename2 = 'JavaScript 微课';
+        document.write(coursename1+'</br>');
+        document.write(coursename2+'</br>');
+        //可以使用索引位置来访问字符串中的每个字符：
+        var character = coursename[5];
+        /*
+        在 JavaScript 中，字符串写在单引号或双引号中。
+        可以在字符串中使用引号，字符串中的引号不要与字符串的引号相同:
+        */
+        var intro1 = "I'm Loen";
+        var answer1 = 'He is called "Lusi"';
+        document.write(intro1+'</br>');
+        document.write(answer1+'</br>');
+        //可以在字符串添加转义字符来使用引号：
+        var intro2 = 'I\'m Loen';
+        var intro3 = 'I\'m Loen \nThis is My List';
+        var answer2 = "He is called \"Lusi\"";
+        document.write(intro2+'</br>');
+        document.write(intro3+'</br>');
+        document.write(answer2+'</br>');
+        //字符串长度
+        //可以使用内置属性 length 来计算字符串的长度：
+        var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var len = txt.length;
+        document.write('字符串：'+txt+'的长度是：'+len+'</br>');
+        /*
+        字符串最有用的运算符是使用+符号连接字符串。
+        +符号可以将多个字符串连接在一起来构建字符串，也可以通过将字符串与其他类型数据相连构建字符串：
+        */
+        var myString1 = "我在学习";
+        var myString2 = "JavaScript编程语言";
+        document.write(myString1 + myString2+'</br>');
+        //通过使用连接运算符 + ，你可以插入一个或多个变量来组成一个字符串。
+        var myName = "Loen";
+        var myStr1 = "My name is "+myName+" and I am well";
+        document.write(myStr+'</br>');
+        //在JavaScript中,字符串的值是不可变的,这意味着一旦字符串被创建就不能被改变。
+        var myStr2 = "Bob";
+        //myStr并未被改变
+        myStr2[0] = "J";
+        document.write(myStr2+'</br>');
+        //改变myStr中的唯一方法是重新给它赋一个值：
+        var myStr3 = "Bob";
+        myStr3 = "Job";
+        document.write(myStr3);
+
+
+
+
+        
+
+    </script>
+</body>
+</html>

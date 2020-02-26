@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建对象函数
+        methodName : function test() { 
+            //方法体
+        }
+        //访问对象函数
+        objectName.methodName()
+
+        //this关键词是当前对象的引用,可以使用 this 来访问对象属性和方法
+        function person(name, age) {
+            this.name = name
+            this.age = age
+            this.changeName = function(name) {
+                this.name = name
+            }
+        }
+        var p = new person('Loen', 28)
+        p.changeName('John')
+
+
+        //可以在构造函数外部定义一个函数，通过函数名关联到对象的属性上
+        function person(name, age) {
+            this.name = name
+            this.age = age
+            this.yearOfBirth = bornYear // 关联 bornYear 函数
+        }
+        function bornYear() {
+            return new Date().getFullYear() - this.age
+        }
+    </script>
+</body>
+</html>

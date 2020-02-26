@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            显式参数 
+            functionName(parameter1, parameter2, parameter3){
+                代码放这里
+            }
+        */
+
+        //函数隐藏参数(arguments)是函数调用时传递给函数真正的值（类似Java中的实参概念）
+        function sum(){
+            return arguments[0] + arguments[1];
+        }
+        document.write(sum(1,2)+'</br>');
+
+        //调用多个参数的函数时，应该和定义它们相同的顺序提供参数。
+        function sayHello(name, age) {
+            console.log(name + '年龄是:' + age + '岁')
+        }
+        sayHello('John', 20); 
+        sayHello(20, 'John');
+
+        //JavaScript函数不检查收到的参数数量。
+        function sayHello(name, age) {
+        console.log(name + '年龄是:' + age + '岁')
+        }
+        //输出: John年龄是:undefined岁
+        sayHello('John');
+    </script>
+</body>
+</html>

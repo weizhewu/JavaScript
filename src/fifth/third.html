@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //JavaScript使用函数来构造对象：
+      function person(firstname, lastname, age, eyecolor){
+         this.firstname = firstname;
+         this.lastname = lastname;
+         this.age = age;
+         this.eyecolor = eyecolor;
+      }
+
+      //在JavaScript中，this通常指向的是我们正在执行的函数本身，或者是指向该函数所属的对象（运行时）。一旦有了对象构造器，就可以创建新的对象实例
+      var myFather = new person('John', 'Doe', 50, 'blue')
+      var myMother = new person('Sally', 'Rally', 48, 'green')
+      console.log(myFather.age) 
+      console.log(myMother.firstname) 
+ 
+    </script>
+</body>
+</html>

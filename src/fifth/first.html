@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            两种方式访问对象属性
+            objectName.propertyName
+            objectName['propertyName']
+        */
+        var person = {
+            name: 'John',
+            age: 31,
+            favColor: 'green',
+            height: 183
+        }
+        var x = person.age
+        var y = person['age']
+        console.log('x:'+x+",y:"+y)
+
+        //JavaScript的内置长度属性用于计算属性或字符串中的字符数。
+        var course = {name: 'JS',lessons:54}
+        console.log(course.name.length)
+
+        //当创建了一个对象后，可以用 . 或 [] 来更新对象的属性。
+        var ourDog = {
+            name: 'Camper',
+            legs: 4,
+            tails: 1,
+            friends: ['everything!']
+        }
+
+        //如果更改它的名称为 'Happy Camper'，有两种方式来更新对象的name属性：
+        ourDog.name = 'Happy Camper'
+        ourDog['name'] = 'Happy Camper'
+        
+        //也可以像更改属性一样给对象添加属性
+        var ourDog = {
+            name: 'Camper',
+            legs: 4,
+            tails: 1,
+            friends: ['everything!']
+        }
+        //ourDog['bark'] = 'bow-wow'
+        ourDog.bark = 'bow-wow' 
+
+        //以删除对象的属性
+        var ourDog = {
+            name: 'Camper',
+            legs: 4,
+            tails: 1,
+            friends: ['everything!']
+        }
+        var c1 = ourDog['tails'] 
+        // 删除tails属性
+        delete ourDog['tails'] 
+        var c2 = ourDog['tails'] 
+        console.log(ourDog)
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            函数声明的语法
+
+            function functionName(parameters) {
+                函数中的代码
+            }
+        */
+
+        //函数声明后不会立即执行，会在需要的时候调用到。
+        function myFunction(a, b) {
+            return a * b
+        }
+        //要调用函数，从函数的名称开始，然后使用括号中的参数
+        var res = myFunction(2, 3) // 函数调用, 返回 6
+        document.write(res);
+    </script>
+</body>
+</html>
