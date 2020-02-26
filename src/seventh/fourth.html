@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Math对象
+        document.write(Math.PI);
+
+
+        //计算方法
+
+        //计算一个数字的平方根
+        var number = Math.sqrt(4);
+        document.write(number);
+
+        var n = prompt("请输入一个数字:", "");
+        var answer = Math.sqrt(n);
+        alert("数字" + n + " 的平方根是: " + answer);
+
+
+        //floor()方法,返回小于或等于一个给定数字的最大整数,向下取整
+        //45
+        Math.floor( 45.95); 
+        //45
+        Math.floor( 45.05); 
+        //4
+        Math.floor( 4 ); 
+        //-46
+        Math.floor(-45.05); 
+        //-46
+        Math.floor(-45.95); 
+
+        //random()方法,返回介于[0,1)之间的一个随机数
+       
+        //返回[1,10]之间的一个随机数
+        Math.floor((Math.random()*10)+1);
+
+        //round()方法，返回一个数字四舍五入后最接近的整数
+
+        //20
+        x = Math.round(20.49);
+        //21 
+        x = Math.round(20.5); 
+        //-20
+        x = Math.round(-20.5);
+        //-21 
+        x = Math.round(-20.51); 
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //new String()创建String对象
+        var txt = new String("string");
+        //或者
+        var txt = "string";
+
+        //String对象方法
+        var str = "Hello,Nier";
+        //把字符串转为小写
+        var a = str.toLowerCase();
+        //把字符串转为大写
+        var b = str.toUpperCase();
+        //去掉字符串两边的空白
+        var c = " Hello world ".trim();
+
+        var str1 = "Hello world,welcome to the w3cschool.";
+        //返回13
+        var n = str1.indexOf("welcome");
+        //返回-1
+        var c = str1.indexOf("loen");
+
+        var str2 = "Mr Blue has a blur house and a blue car and a blue hat";
+        //将字符串中首次出现的blue替换成red
+        var n = str2.replace("blue","red");
+        //用正则匹配字符串中所有出现的blue并替换成red
+        var c = str2.replace(/blue/g,"red");
+
+        var str3 = "Hello world!";
+        document.write(str3.substring(3)+"<br>");
+        document.write(str3.substring(3,7));
+
+    </script>
+</body>
+</html>

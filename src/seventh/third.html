@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            JSON语法定义sites对象: 3条网站信息（对象）的数组
+            {"sites":[
+            {"name":"baidu", "url":"www.baidu.com"},
+            {"name":"Google", "url":"www.google.com"},
+            {"name":"Taobao", "url":"www.taobao.com"}
+        ]}
+        */
+
+        //JSON.parse()方法,将一个 JSON 字符串转换为对象
+        //JSON.parse(text[, reviver])
+
+        var text = '{"employees":[' +
+                        '{"name":"baidu","site":"http://www.baidu.com" },' +
+                        '{"name":"Google","site":"http://www.Google.com" },' +
+                        '{"name":"Taobao","site":"http://www.taobao.com" }]}';
+        obj = JSON.parse(text);
+        document.getElementById("demo").innerHTML = obj.employees[1].name + " " + obj.employees[1].site;
+
+        JSON.parse('{"p": 5, "s": 1.5, "t": -3}', function (k, v) {
+            //如果到了最顶层，则直接返回属性值，
+            if(k === ''){
+                return v;
+            } 
+            //否则将属性值变为原来的2倍。
+            return v * 2; 
+            //最终返回{"p": 10, "s": 3, "t": -6}
+        }); 
+
+        JSON.parse('{"1": 1, "2": 2,"3": {"4": 4, "5": {"6": 6}}}', function (k, v) {
+            //输出当前的属性名，从而得知遍历顺序是从内向外的，
+            // 最后一个属性名会是个空字符串。
+            console.log(k); 
+            //返回原始属性值，相当于没有传递 reviver 参数。
+            return v; 
+            //最终返回：1 2 4 6 5 3
+        });
+
+        //JSON.stringify()方法,将JavaScript值转换为JSON字符串
+        //JSON.stringify(value[, replacer[, space]])
+        var str = {"name":"baidu", "site":"http://www.baidu.com"}
+        str_pretty1 = JSON.stringify(str)
+        document.write( "只有一个参数情况：" );
+        document.write( "<br>" );
+        document.write("<pre>" + str_pretty1 + "</pre>" );
+        document.write( "<br>" );
+        //使用四个空格缩进
+        str_pretty2 = JSON.stringify(str, null, 4) 
+        document.write( "使用参数情况：" );
+        document.write( "<br>" );
+        //pre用于格式化输出
+        document.write("<pre>" + str_pretty2 + "</pre>" ); 
+        
+
+
+
+    </script>
+</body>
+</html>

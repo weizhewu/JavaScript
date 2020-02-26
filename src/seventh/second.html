@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Window对象属性
+
+        //返回窗口的文档显示区的高度
+        var weinInnerHeight = window.innerHeight;
+        //返回窗口的文档显示区的宽度
+        var weinInnerWidth = window.innerWidth;
+
+        //返回窗口的外部高度，包含工具条与滚动条
+        var minOuterHeight = window.outerHeight;
+        //返回窗口的外部宽度，包含工具条与滚动条
+        var minOuterWidth = window.outerWidth;
+
+        //返回相对于屏幕窗口的x坐标
+        var weinScreenLeft = window.screenLeft;
+        //返回相对于屏幕窗口的y坐标
+        var weinScreenTop = window.screenTop;
+
+
+        //Window对象方法
+
+        //alert()是调用window对象的方法，调用window对象方法可以不需要指明window对象
+        alert("hello world");
+        //等价于
+        window.alert('hello world');
+
+        //window.open(URL,name,specs,replace)
+
+        //跳转
+        function open_win() {
+            window.open("http://www.baidu.com");
+        }
+
+        function openWin(){
+            myWindow=window.open('','','width=200,height=100');
+            myWindow.document.write("<p>这是'我的窗口'</p>");
+            myWindow.focus();
+        }
+
+        //setTimeout()方法，用于在指定的毫秒数后调用函数或计算表达式
+        setTimeout(function(){
+             alert("Hello"); 
+        }, 3000);
+
+        //打开一个新窗口，3秒后将该窗口关闭
+        var myWindow = window.open("", "", "width=200, height=100");
+        myWindow.document.write("<p>这是一个新窗口'</p>");
+        setTimeout(function(){ 
+            myWindow.close() 
+        }, 3000);
+
+        //使用clearTimeout()来阻止函数的执行
+        var myVar;
+        function myFunction() {
+            myVar = setTimeout(function(){ alert("Hello") }, 3000);
+        }
+        
+        function myStopFunction() {
+            clearTimeout(myVar);
+        }
+
+
+
+
+    </script>
+</body>
+</html>
