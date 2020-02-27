@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //DOM的元素：head,body
+        //由于body是DOM的元素，因此我们可以使用document对象访问它并更改innerHTML属性的内容。
+        document.body.innerHTML = "Some text";
+
+        // 选择元素的方法
+        //通过id 
+        document.getElementById(id)
+        //通过类
+        document.getElementsByClassName(name)
+        //通过标签
+        document.getElementsByTagName(name)
+
+        //通过getElementById方法,选择 id="demo"的元素并更改其内容
+        var elem = document.getElementById("demo");
+        elem.innerHTML = "Hello World"; 
+    </script>
+
+
+    <div class="demo">
+        <span class="demo">Hi I'm Loen!</span>
+    </div>
+    <p class="demo">This is a paragraph</p>
+    <script>
+        //getElementsByClassName()方法,通过类名查找所有元素，并将其作为数组返回
+        var arr = document.getElementsByClassName("demo");
+        //访问第二个元素
+        arr[1].innerHTML = "Hi I am Peter";
+    </script>
+
+
+    <p>hi</p>
+    <p>hello</p>
+    <p>hi</p>
+    <script>
+        //getElementsByTagName方法,返回指定标签名称的所有元素,作为数组返回
+        var arr = document.getElementsByTagName("p");
+        for (var x = 0; x < arr.length; x++) {
+            arr[x].innerHTML = "Hi there";
+        }
+    </script>
+
+
+    <div id ="demo">
+        <p>一些文本</p>
+        <p>另一些文本 </p>
+    </div>
+    <script>
+        /*
+            element.childNodes 返回一个元素的子节点的数组。
+            element.firstChild 返回元素的第一个子节点。
+            element.lastChild 返回元素的最后一个子节点。
+            element.hasChildNodes 如果元素有任何子节点，则返回 true，否则为 false 。
+            element.nextSibling 返回相同树级别的下一个节点。
+            element.previousSibling 返回在同一树级别的上一个节点。
+            element.parentNode 返回元素的父节点。
+        */
+        var a = document.getElementById("demo");
+        var arr = a.childNodes;
+        for(var x=0;x<arr.length;x++) {
+            arr[x].innerHTML = "新的文本";
+        }
+    </script>
+
+
+    <img id="my-img" src="1.jpg" alt="" />
+    <script>
+        //选择要使用的元素后，可以更改其属性
+        //更改图像的src属性
+        var el = document.getElementById("my-img"); 
+        el.src = "2.jpg";
+    </script>
+
+    <a href="http://www.baidu.com">百度</a>
+    <script>
+        //更改链接的href属性
+        var el = document.getElementsByTagName("a");
+        el[0].href = "https://www.google.cn";
+        el[0].innerHTML = "google";
+    </script>
+
+    <div id="demo" style="width:200px">一些文本</div>
+    <script>
+        /*
+            HTML元素的样式也可以使用JavaScript进行更改，可以使用元素的style对象来访问所有样式属性
+            不能在属性名称中使用破折号（ - ）：这些替换为驼峰写法，其中复合词以大写字母开头 比如: background-color属性应该被写为 backgroundColor。
+        */
+        //改变div元素的文本颜色和宽度
+        var x = document.getElementById("demo");
+        x.style.color = "6600FF";
+        x.style.width = "100px";
+    </script>
+
+
+    <div id ="demo">一些文本</div>
+    <script>
+        /*
+            element.cloneNode() 克隆元素并返回结果节点。
+            document.createElement(element) 创建一个新的元素节点。
+            document.createTextNode(text) 创建一个新的文本节点。
+            element.appendChild(newNode) 将一个新的子节点添加到元素作为最后一个子节点。
+            element.insertBefore(node1, node2) 在节点2之前插入node1作为子节点。
+        */
+        //创建一个新的段落
+        var p = document.createElement("p");
+        var node = document.createTextNode("一些新的文本");
+        //添加文本到段落
+        p.appendChild(node);
+        var div = document.getElementById("demo");
+        //将段落添加到div中
+        div.appendChild(p);
+    </script>
+
+    <div id="demo">
+        <p id="p1">这是一个段落.</p>
+        <p id="p2">这是另外一个段落.</p>
+    </div>
+    <script>
+        //removeChild(node)方法，删除HTML元素
+        var parent = document.getElementById("demo");
+        var child = document.getElementById("p1");
+        //或者使用 parentNode
+        //var child = document.getElementById("p1");
+        //child.parentNode.removeChild(child);
+        parent.removeChild(child);
+    </script>
+
+
+    <div id="demo">
+        <p id="p1">这是一个段落</p>
+        <p id="p2">这是另一个段落</p>
+    </div>
+    <script>
+        //element.replaceChild(newNode,oldNode)方法,替换HTML元素
+        var p = document.createElement("p");
+        var node = document.createTextNode("这是新的文本");
+        p.appendChild(node);
+        var parent = document.getElementById("demo");
+        var child = document.getElementById("p1");
+        parent.replaceChild(p, child);
+    </script>
+
+
+
+    
+
+</body>
+</html>
