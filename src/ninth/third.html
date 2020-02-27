@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            addEventListener()方法，将事件处理程序附加到元素，而不会覆盖现有的事件处理程序。
+            element.addEventListener(event, function [, useCapture]);
+        */
+        //在添加事件类型的时候没有on, 用的是click而不是onclick
+        element.addEventListener("click", myFunction);
+
+        element.addEventListener("mouseover", myFunction);
+        function myFunction() {
+            alert("Hello JavaScript！");
+        }
+
+    </script>
+</body>
+</html>

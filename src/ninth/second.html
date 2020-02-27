@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="doSomething()" onunload="soThing()">
+
+    <button onclick="show()">点击我</button>
+    <script>
+        //点击事件
+        function show() {
+            alert("你好,我在这里!");
+        }
+
+        //给元素绑定事件监听
+        var x = document.getElementById("demo");
+        x.onclick = function () {
+            document.getElementById("date").innerHTML = new Date();
+        }
+
+        //window.onload事件，用于在整个页面加载之后运行代码
+        window.onload = function() {
+            alert("整个页面已经加载完成");
+        }
+
+        function doSomething(){
+            alert("用户进入！")
+        }
+
+        function doThing(){
+            alert("用户离开！")
+        }
+    </script>
+
+    <input type="text" id="name" onchange="change()">
+    <script>
+        //onchange事件：件主要用于文本框，当文本框内的文本发生变化并且焦点从元素中丢失时，调用事件处理程序
+        function change() {
+            var x = document.getElementById("name");
+            x.value= x.value.toUpperCase(); 
+        }
+    </script>
+</body>
+</html>

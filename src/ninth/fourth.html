@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="demo">开始</button>
+    <script>
+        //removeEventListener,删除事件监听
+        //element.removeEventListener("mouseover", myFunction);
+
+        var btn = document.getElementById("demo");
+        btn.addEventListener("click", myFunction);
+        function myFunction() {
+            alert(Math.random());
+            //按钮删除事件监听
+            btn.removeEventListener("click", myFunction);
+        }
+    </script>
+</body>
+</html>
